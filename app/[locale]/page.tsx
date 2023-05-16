@@ -1,9 +1,7 @@
-/** Add your relevant code here for the issue to reproduce */
 import styles from "./page.module.css";
 import Link from "next/link";
 
 export default async function Home() {
-  const locale = "es";
   return (
     <main
       className={styles.main}
@@ -16,13 +14,18 @@ export default async function Home() {
         padding: "1rem",
       }}
     >
+      <strong style={{ color: "orange" }}>Same CSS module</strong>
       <div className={styles.card}>
-        <Link href={`/${locale}`}>
-          <h2>
-            {`Link to dynamic route `}
-            <span>{`->`}</span>
-          </h2>
-        </Link>
+        <Link href="/es/same">{`TO PAGE`}</Link>
+        <span>{`->`}</span>
+      </div>
+      <br />
+      <br />
+      <br />
+      <strong style={{ color: "purple" }}>Different CSS module</strong>
+      <div className={styles.card}>
+        <Link href="/es/different">{`TO PAGE`}</Link>
+        <span>{`->`}</span>
       </div>
     </main>
   );
